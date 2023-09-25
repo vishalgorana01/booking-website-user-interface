@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+/* scrollbar */
+.hiddenScrollbar::-webkit-scrollbar{
+    display: none !important;
+}
+
+/* Home */
+.LandingBg {
+    background-image: url('https://img.freepik.com/free-photo/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky_181624-5118.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000000c2;
+    background-blend-mode: darken;
+}
+
+.TravelTipsBg {
+    background-image: url('../Images/TravelTipsBg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000000c2;
+    background-blend-mode: darken;
+}
+
+
+/* SignIn Page */
+.SignInBg {
+    background-image: url('../Images/SignIn2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000000ab;
+    background-blend-mode: darken;
+}
+
+.signInForm {
+    background: rgba(40, 61, 98, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(1, 2, 16, 0.37);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-radius: 10px;
+    border: 1px solid rgb(35 39 51 / 81%);
+}
+
+
+/* Destination Page */
+.DestinationLandingBg{
+    /* background-image: url('https://img.freepik.com/free-photo/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky_181624-5118.jpg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000000c2;
+    background-blend-mode: darken;
+}
+
+
+/* Utilities CSS */
+.RangeSliderBoxShadow {
+    box-shadow: none !important;
+}
+
+.multi-range-slider .bar-left{
+    box-shadow: none !important;
+    border: none !important;
+    padding: 3.5px 0px !important;
+    background-color: rgb(204 204 204) !important;
+}
+
+.multi-range-slider .bar-inner{
+    box-shadow: none !important;
+    border: none !important;
+    background-color: #548bf4 !important;
+}
+
+.multi-range-slider .bar-right{
+    box-shadow: none !important;
+    border: none !important;
+    padding: 3.5px 0px !important;
+    background-color: rgb(204 204 204) !important;
+}
+
+.multi-range-slider .thumb::before{
+    border: 2px solid #548bf4 !important;
+    box-shadow: none !important;
+    height: 18px !important;
+    width: 18px !important;
+    margin: -6px -12px !important;
+}
+
+
+/* Custom DropDown */
+
+.custom-dropdown {
+    position: relative;
+    text-align: left;
+  }
+  
+  .dropdown-header {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #fff;
+    z-index: 1;
+    color: #000000b0;
+  }
+  
+  .dropdown-options li {
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+  
