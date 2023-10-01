@@ -129,3 +129,10 @@
     }
   }
   
+
+
+  /* Read Only Rating */
+  .readonlyrating > span > svg{
+    height: 1rem !important;
+    width: 1rem !important; 
+  }

@@ -18,7 +18,6 @@ function Landing() {
           </span>
           <h3 className='text-xs italic font-normal text-left lg:text-sm'>A Journey Through History, Culture, and Architecture</h3>
         </div>
-
       </section>
       {/* <Hotels /> */}
     </>
