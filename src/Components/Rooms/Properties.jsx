@@ -6,10 +6,13 @@ import { propertiesData as data } from '../HardData/PropertiesData'
 
 // react-icons
 import { BsFilterLeft } from 'react-icons/bs'
+import {IoIosArrowForward} from 'react-icons/io'
 import RoomCards from '../Cards/RoomCards'
 
 
 export default function Properties() {
+    const [hotelName, setHotelName] = useState('')
+    const [results, setResults] = useState(0)
     const [translate, setTranslate] = useState(false)
 
     const sortByOptions = [
@@ -22,6 +25,14 @@ export default function Properties() {
     ]
 
     useState(() => {
+        const Hotel = data.filter((ele, index) => {
+            return (
+                ele.HotelId == '3'
+            )
+        })
+
+        setHotelName(Hotel[0].HotelName)
+        setResults(Hotel[0].Rooms.length)
 
     }, [translate])
 
@@ -37,13 +48,17 @@ export default function Properties() {
                     <div className='flex flex-col items-center justify-center w-full'>
                         <span className='text-md text-normal text-[#000000c7] w-full text-left' htmlFor="">Search Results for:</span>
                         <span className='flex items-center justify-between w-full mt-3.5'>
-                            <h2 className='text-lg font-semibold text-black text-left lg:text-2xl'>Moscow</h2>
+                            <span className='flex items-center justify-start gap-x-1'>
+                                <h2 className='text-base font-semibold text-black text-left lg:text-2xl'>{hotelName}</h2>
+                                <IoIosArrowForward className=' mt-1 hidden font-extrabold text-black text-xl sm:inline-block'  />
+                                <span className='text-md font-semibold text-black hidden sm:inline-block'>Rooms</span>
+                            </span>
                             <BsFilterLeft className='inline-block text-2xl text-black font-bold cursor-pointer xl:hidden' onClick={() => setTranslate(!translate)} />
                         </span>
                         <UnderLine />
 
                         <span className='flex items-center justify-between w-full mb-3.5'>
-                            <span className='text-md text-normal text-[#000000c7] w-full text-left' htmlFor="">12 results found for moscow</span>
+                            <span className='text-md text-normal text-[#000000c7] w-full text-left' htmlFor="">{results} rooms found </span>
                             <span className='flex items-center justify-center w-48'>
                                 <CustomDropdown options={sortByOptions} labelName='' />
                             </span>

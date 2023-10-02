@@ -27,7 +27,7 @@ export default function RoomCards({ img, roomName, category, hotelName, tags, pr
                         <AiFillTags className='mr-1.5 text-lg text-green-600' />
                         {tags.map((ele, index)=> {
                             return (
-                                <>{ele} | </>
+                                <span key={index}>{ele} | </span>
                             )
                         })}
                     </span>
