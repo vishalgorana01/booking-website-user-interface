@@ -92,9 +92,9 @@ export default function Description() {
 
     const tourItinerary = itineraryPoints.map((ele, index) => {
         return (
-            <span className='flex flex-col items-start gap-y-1 gap-x-1.5 justify-center text-xs w-full sm:flex-row'>
+            <span key={index} className='flex flex-col items-start gap-y-1 gap-x-1.5 justify-center text-xs w-full sm:flex-row'>
                 <span className='bg-green-400 text-center w-24 font-semibold py-1.5 rounded-sm'>Day {index+1}</span>
-                <span key={index} className='flex flex-col items-start justify-center text-left'>
+                <span className='flex flex-col items-start justify-center text-left'>
                     <span className='flex items-center justify-center gap-x-2 text-green-700'>
                         <GiDiamonds className='text-xs' />
                         <span className='text-xs font-semibold'>{ele.title}</span>
@@ -182,8 +182,8 @@ export default function Description() {
             </span>
 
             {/* Tour Details */}
-            <span className={`${choose.TourDetails ? 'h-auto' : 'h-10'} duration-500 overflow-y-clip text-left text-xs font-normal flex flex-col items-start justify-start w-full gap-y-5`}>
-                <span className='flex items-center justify-center text-green-700 text-sm font-semibold' onClick={()=>handleClick(1)}>
+            <span className={`${choose.TourDetails ? 'max-h-max' : 'max-h-10'} duration-500 ease-linear overflow-y-clip text-left text-xs font-normal flex flex-col items-start justify-start w-full gap-y-5`}>
+                <span className='flex cursor-pointer items-center justify-center text-green-700 text-sm font-semibold' onClick={()=>handleClick(1)}>
                     <BsFillCircleFill className={`text-md mt-0.5 mr-1 ${choose.TourDetails ? 'text-green-500' :  'text-green-300'}`} />
                     Trip Details
                 </span>
@@ -202,9 +202,9 @@ export default function Description() {
             </span>
 
             {/* Tour Activities */}
-            <span className={`${choose.TourActivities ? 'h-auto' : 'h-10'} duration-500 overflow-y-clip text-left text-xs font-normal flex flex-col items-start justify-start w-full gap-y-5`}>
-                <span className='flex items-center justify-center text-sm font-semibold text-green-700' onClick={()=>handleClick(2)}>
-                    <BsFillCircleFill className={`text-md mt-0.5 mr-1 text-green-500 ${choose.TourActivities ? 'text-green-500' :  'text-green-300'}`} />
+            <span className={`${choose.TourActivities ? 'max-h-max' : 'max-h-10'} duration-500 overflow-y-clip text-left text-xs font-normal flex flex-col items-start justify-start w-full gap-y-5`}>
+                <span className='flex cursor-pointer items-center justify-center text-sm font-semibold text-green-700' onClick={()=>handleClick(2)}>
+                    <BsFillCircleFill className={`text-md mt-0.5 mr-1 ${choose.TourActivities ? 'text-green-500' :  'text-green-300'}`} />
                     Tour Acitivites
                 </span>
                 <span className='text-justify'>
@@ -222,8 +222,8 @@ export default function Description() {
             </span>
 
             {/* Package Benefits */}
-            <span className={`${choose.PackageBenefits ? 'h-auto' : 'h-10'} overflow-y-clip text-left text-xs font-normal flex flex-col items-start justify-start w-full gap-y-5`}>
-                <span className='flex items-center justify-center text-sm font-semibold text-green-700' onClick={()=>handleClick(3)}>
+            <span className={`${choose.PackageBenefits ? 'max-h-max' : 'max-h-10'} duration-500 overflow-y-clip text-left text-xs font-normal flex flex-col items-start justify-start w-full gap-y-5`}>
+                <span className='flex cursor-pointer items-center justify-center text-sm font-semibold text-green-700' onClick={()=>handleClick(3)}>
                     <BsFillCircleFill className={`text-md mt-0.5 mr-1  ${choose.PackageBenefits ? 'text-green-500' :  'text-green-300'}`} />
                     Package Benefits
                 </span>
@@ -239,8 +239,8 @@ export default function Description() {
             </span>
 
             {/* Ending */}
-            <span className={`${choose.Ending ? 'h-auto' : 'h-10'} overflow-y-clip text-left text-xs font-normal flex flex-col items-start justify-start w-full gap-y-5`}>
-                <span className='flex items-center justify-center text-sm font-semibold text-green-700' onClick={()=>handleClick(4)}>
+            <span className={`${choose.Ending ? 'max-h-max' : 'max-h-10'} duration-500 overflow-y-clip text-left text-xs font-normal flex flex-col items-start justify-start w-full gap-y-5`}>
+                <span className='flex cursor-pointer items-center justify-center text-sm font-semibold text-green-700' onClick={()=>handleClick(4)}>
                     <BsFillCircleFill className={`text-md mt-0.5 mr-1  ${choose.Ending ? 'text-green-500' :  'text-green-300'} `} />
                     Ending
                 </span>
@@ -256,6 +256,16 @@ export default function Description() {
                         {Highlights}
                     </span>
                 </span>
+            </span>
+
+            <span className='flex flex-col items-start justify-center w-full gap-y-5 sm:gap-y-10 '>
+                <h2 className='text-xl text-green-700 font-semibold sm:text-2xl'>Rating</h2>
+                <ShowCaseRating />
+            </span>
+
+            <span className='flex flex-col items-start justify-center w-full gap-y-5 sm:gap-y-10 '>
+                <h2 className='text-xl text-green-700 font-semibold sm:text-2xl'>Our Reviews</h2>
+                <Reviews />
             </span>
 
         </div>
