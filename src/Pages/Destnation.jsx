@@ -4,6 +4,7 @@ import Landing from '../Components/Destination/Landing'
 import Hotels from '../Components/Searching/Hotels'
 import Properties from '../Components/Destination/Properties'
 import GeneralFooter from '../Components/Footer/GeneralFooter'
+import Footer from '../Components/Footer/Footer'
 
 
 function Destnation() {
@@ -12,7 +13,8 @@ function Destnation() {
             <GeneralNavbar bgColor='transparent' color='white'/>
             <Landing />
             <Properties />
-            <GeneralFooter />
+            {/* <GeneralFooter /> */}
+            <Footer />
         </>
     )
 }

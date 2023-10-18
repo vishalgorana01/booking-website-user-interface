@@ -5,8 +5,8 @@ import Reserve from '../Sidebar/Reserve'
 function RoomDescription() {
   return (
     <>
-    <section className='flex items-center justify-center w-screen py-28'>
-        <div className='flex items-center justify-center w-full max-w-7xl'>
+    <section className='flex items-start justify-center w-screen py-28'>
+        <div className='flex flex-col items-start justify-between w-full max-w-7xl lg:flex-row'>
             <Description />
             <Reserve />
         </div>

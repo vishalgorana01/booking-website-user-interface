@@ -42,7 +42,7 @@ function NavbarSidebar(props) {
                         </li>
                         <li className='cursor-pointer'>
                             <a className='flex items-center justify-center text-md' href="">
-                                <MdNightsStay className='text-xl mr-2.5' /> Stay
+                                <MdNightsStay className='text-xl mr-2.5' /> Packages
                                 <MdArrowDropDown className='text-xl -rotate-90' />
                             </a>
                         </li>
@@ -52,12 +52,12 @@ function NavbarSidebar(props) {
                                 <MdArrowDropDown className='text-xl -rotate-90' />
                             </a>
                         </li>
-                        <li className='cursor-pointer'>
+                        {/* <li className='cursor-pointer'>
                             <a className='flex items-center justify-center text-md' href="">
                                 <BsFillCarFrontFill className='text-xl mr-2.5' /> Car Rentals
                                 <MdArrowDropDown className='text-xl -rotate-90' />
                             </a>
-                        </li>
+                        </li> */}
                         <li className='cursor-pointer'>
                             <a className='flex items-center gap-x-2.5 justify-center text-md' href="">
                                 <FcAbout className='text-xl' /> About us

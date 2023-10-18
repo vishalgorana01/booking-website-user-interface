@@ -33,7 +33,7 @@ function Reserve() {
         { label: 'Day Spa' },
     ]
     return (
-        <div className='flex flex-col items-start justify-center w-[30rem] shadow-xl px-3.5 py-5 gap-y-7' style={{ borderLeft: '2px solid #0000002e' }}>
+        <div className='flex flex-col items-start justify-center w-full shadow-xl px-3.5 py-5 gap-y-7 lg:w-[30rem] lg:max-w-sm' style={{ borderLeft: '2px solid #0000002e' }}>
             <h1 className='text-3xl tracking-wider font-semibold text-black'>Reserve:</h1>
 
             <span className='flex flex-col gap-y-1 items-start justify-start w-full mb-2'>

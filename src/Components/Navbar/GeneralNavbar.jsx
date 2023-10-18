@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+// Import Global css
+import '../../Assets/CSS/Global.css'
+
 // ReactIcons
 import { RiFacebookFill } from 'react-icons/ri';
 import { FaInstagram, FaSearch, FaTwitter, FaYoutube } from 'react-icons/fa';
@@ -15,7 +18,7 @@ function GeneralNavbar(props) {
 
     return (
         <>
-            <section className={`z-10 py-3 px-5 text-gray-400 absolute top-0 flex items-center justify-center w-screen`} style={{backgroundColor: props.bgColor, color: props.color}}>
+            <section className={`z-10 py-3 px-5 text-gray-400 absolute top-0 flex items-center justify-center w-screen`} style={{ backgroundColor: props.bgColor, color: props.color }}>
                 <div className='flex flex-col gap-y-2.5 items-center justify-center w-full max-w-7xl'>
 
                     <span className='hidden  items-center justify-between w-full lg:flex'>
@@ -49,10 +52,100 @@ function GeneralNavbar(props) {
 
                         <ul className='hidden text-[0.75rem] font-normal items-center justify-center gap-x-4 lg:flex'>
                             <li className='cursor-pointer'><a href="">Home</a></li>
-                            <li className='flex items-center justify-center cursor-pointer'><a href="">Hotels</a> <MdArrowDropDown className='text-xl mt-0.5' /></li>
-                            <li className='flex items-center justify-center cursor-pointer'><a href="">Stay</a> <MdArrowDropDown className='text-xl mt-0.5' /></li>
-                            <li className='flex items-center justify-center cursor-pointer'><a href="">Flights</a> <MdArrowDropDown className='text-xl mt-0.5' /></li>
-                            <li className='flex items-center justify-center cursor-pointer'><a href="">Car rentals</a> <MdArrowDropDown className='text-xl mt-0.5' /></li>
+                            <li className='hotelsHover flex relative items-center justify-center cursor-pointer'>
+                                <a href="">Hotels</a> <MdArrowDropDown className='text-xl mt-0.5' />
+                                <span className='hotels absolute top-2.5 pt-5 left-auto w-96 rounded-md shadow-xl'>
+                                    {/* triangle */}
+                                    <span className='absolute left-[11rem] bg-white top-2.5 h-5 w-5 lg:inline-block' style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></span>
+                                    <ul className='grid grid-cols-2 list-none text-black text-xs gap-x-2 gap-y-1.5 flex-col items-start justify-center bg-white py-5 px-3.5 rounded-md'>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Sydney Hotels
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Boston Hotels
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Walt Disney World Area Hotels
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Las Vegas Hotels
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Maui Hotels
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            New York Hotels
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            San Francisco Hotels
+                                        </li>
+                                    </ul>
+                                </span>
+                            </li>
+
+                            <li className='packagesHover flex items-center justify-center cursor-pointer'>
+                                <a href="">Packages</a> <MdArrowDropDown className='text-xl mt-0.5' />
+                                <span className='packages absolute top-2.5 pt-5 left-auto w-96 rounded-md shadow-xl'>
+                                    {/* triangle */}
+                                    <span className='absolute left-[11rem] bg-white top-2.5 h-5 w-5 lg:inline-block' style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></span>
+                                    <ul className='grid grid-cols-2 list-none text-black text-xs gap-x-2 gap-y-1.5 flex-col items-start justify-center bg-white py-5 px-3.5 rounded-md'>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Las Vegas Vacations
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Orlando Vacations
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            New York Vacations
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Miami Vacations
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            San Diago Vacations
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            San Francisco Vacations
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Los Angeles New Orleans
+                                        </li>
+                                    </ul>
+                                </span>
+                            </li>
+
+                            <li className='flightsHover flex items-center justify-center cursor-pointer'>
+                                <a href="">Flights</a> <MdArrowDropDown className='text-xl mt-0.5' />
+                                <span className='flights absolute top-2.5 pt-5 left-auto w-96 rounded-md shadow-xl'>
+                                    {/* triangle */}
+                                    <span className='absolute left-[11rem] bg-white top-2.5 h-5 w-5 lg:inline-block' style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }}></span>
+                                    <ul className='grid grid-cols-2 list-none text-black text-xs gap-x-2 gap-y-1.5 flex-col items-start justify-center bg-white py-5 px-3.5 rounded-md'>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Flights to New York
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Flights to Las Vegas
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Flights to Los Angeles
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Flights to Orlando
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Flights to Miami
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Flights to San Francisco
+                                        </li>
+                                        <li className='text-left cursor-pointer px-3 py-2 rounded-md hover:bg-[#0000001f]'>
+                                            Flights to Chicago
+                                        </li>
+                                    </ul>
+                                </span>
+                            </li>
+
+                            {/* <li className='flex items-center justify-center cursor-pointer'><a href="">Car rentals</a> <MdArrowDropDown className='text-xl mt-0.5' /></li> */}
                             <li className='flex items-center justify-center cursor-pointer'><a href="">About us</a></li>
                             <li className='flex items-center justify-center cursor-pointer'><a href="">Contact us</a></li>
                             <li className='flex items-center justify-center cursor-pointer'><a href="">Blog</a></li>
@@ -71,7 +164,7 @@ function GeneralNavbar(props) {
                     <NavbarSidebar show={showHide} />
                 </div>
 
-                <span className={`${showHide? 'hidden':'flex'} fixed left-0 top-0 w-screen h-screen z-0 bg-[#000000c4]`} onClick={() => setShowHide(!showHide)}></span>
+                <span className={`${showHide ? 'hidden' : 'flex'} fixed left-0 top-0 w-screen h-screen z-0 bg-[#000000c4]`} onClick={() => setShowHide(!showHide)}></span>
 
             </section>
         </>

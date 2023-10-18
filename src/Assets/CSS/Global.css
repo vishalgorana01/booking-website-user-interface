@@ -9,6 +9,52 @@
     display: none !important;
 }
 
+/* Navbar */
+.hotels{
+    min-height: 0px;
+    display: none;
+    transform-origin: top;
+}
+
+.hotelsHover:hover .hotels{
+    min-height: auto;
+    display: grid;
+}
+
+.hotels:hover{
+    display: grid;
+}
+
+.packages{
+    min-height: 0px;
+    display: none;
+    transform-origin: top;
+}
+
+.packagesHover:hover .packages{
+    min-height: auto;
+    display: grid;
+}
+
+.packages:hover{
+    display: grid;
+}
+
+.flights{
+    min-height: 0px;
+    display: none;
+    transform-origin: top;
+}
+
+.flightsHover:hover .flights{
+    min-height: auto;
+    display: grid;
+}
+
+.flights:hover{
+    display: grid;
+}
+
 /* Home */
 .LandingBg {
     background-image: url('https://img.freepik.com/free-photo/beautiful-wide-shot-eiffel-tower-paris-surrounded-by-water-with-ships-colorful-sky_181624-5118.jpg');
@@ -128,11 +174,17 @@
       background-color: #f0f0f0;
     }
   }
-  
-
 
   /* Read Only Rating */
   .readonlyrating > span > svg{
     height: 1rem !important;
     width: 1rem !important; 
+  }
+
+  /* Footer */
+  .footerBg{
+    /* background: url('https://dtora.wpengine.com/wp-content/uploads/2019/03/footer-bg.png'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }

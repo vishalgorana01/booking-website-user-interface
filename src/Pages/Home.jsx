@@ -5,6 +5,7 @@ import GeneralFooter from '../Components/Footer/GeneralFooter'
 import TredingDestination from '../Components/Home/TredingDestination'
 import TravelTips from '../Components/Home/TravelTips'
 import Trending from '../Components/Home/Trending'
+import Footer from '../Components/Footer/Footer'
 
 function Home() {
     return (
@@ -14,7 +15,8 @@ function Home() {
             <TredingDestination />
             <TravelTips />
             <Trending />
-            <GeneralFooter />
+            {/* <GeneralFooter /> */}
+            <Footer />
         </>
     )
 }
