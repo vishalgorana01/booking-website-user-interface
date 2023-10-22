@@ -10,7 +10,9 @@ import { BiSwim, BsJoystick } from 'react-icons/bi'
 import ShowCaseRating from '../Utilities/ShowCaseRating'
 import Reviews from '../Utilities/Reviews'
 
-export default function Description() {
+export default function Description(props) {
+    const { package_desc } = props;
+
     const [choose, setChoose] = useState({
         TourDetails: true,
         TourActivities: false,
@@ -18,8 +20,8 @@ export default function Description() {
         Ending: false,
     })
 
-    const handleClick = (given)=>{
-        if(given == 1){
+    const handleClick = (given) => {
+        if (given == 1) {
             setChoose({
                 TourDetails: true,
                 TourActivities: false,
@@ -27,7 +29,7 @@ export default function Description() {
                 Ending: false,
             })
         }
-        else if(given == 2){
+        else if (given == 2) {
             setChoose({
                 TourDetails: false,
                 TourActivities: true,
@@ -35,7 +37,7 @@ export default function Description() {
                 Ending: false,
             })
         }
-        else if(given == 3){
+        else if (given == 3) {
             setChoose({
                 TourDetails: false,
                 TourActivities: false,
@@ -43,7 +45,7 @@ export default function Description() {
                 Ending: false,
             })
         }
-        else if(given == 4){
+        else if (given == 4) {
             setChoose({
                 TourDetails: false,
                 TourActivities: false,
@@ -74,43 +76,62 @@ export default function Description() {
     const itineraryPoints = [
         {
             title: 'Arriving at Agatti Beach',
-            desc: ''
+            desc: [
+                'Arrive at McCarran International Airport.',
+                'Check-in at your chosen hotel on the Las Vegas Strip.',
+                `Explore the iconic Las Vegas Strip, starting with the Bellagio's famous fountains.`,
+                `Visit the Eiffel Tower replica at Paris Las Vegas for panoramic views.`,
+                `Enjoy a gourmet dinner at a renowned restaurant, such as Gordon Ramsay Hell's Kitchen at Caesars Palace.`,
+                `Catch a captivating show like a Cirque du Soleil performance.`
+            ]
         },
         {
             title: 'Exploring Agatti Beach',
-            desc: ''
+            desc: []
         },
         {
             title: 'More Activities',
-            desc: ''
+            desc: []
         },
         {
             title: 'Way Back',
-            desc: ''
+            desc: []
         }
     ]
 
     const tourItinerary = itineraryPoints.map((ele, index) => {
         return (
-            <span key={index} className='flex flex-col items-start gap-y-1 gap-x-1.5 justify-center text-xs w-full sm:flex-row'>
-                <span className='bg-green-400 text-center w-24 font-semibold py-1.5 rounded-sm'>Day {index+1}</span>
+            <span key={index} className='flex flex-col items-start gap-y-1 gap-x-1.5 justify-start text-xs w-full sm:flex-row'>
+                <span className='bg-green-400 text-center w-full max-w-[4rem] font-semibold py-1.5 rounded-sm'>Day {index + 1}</span>
                 <span className='flex flex-col items-start justify-center text-left'>
                     <span className='flex items-center justify-center gap-x-2 text-green-700'>
                         <GiDiamonds className='text-xs' />
                         <span className='text-xs font-semibold'>{ele.title}</span>
                     </span>
-                    <span className='flex items-center justify-center w-full text-left text-xs h-full px-5 py-3.5 my-2 border-l-2 border-green-500 ml-1.5'>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur quisquam voluptate ex tempore soluta ipsam consequuntur doloribus sit illum. Ullam!
+                    <span className='flex items-center justify-center w-full text-left text-xs h-full pl-5 pr-3 py-3.5 my-2 border-l-2 border-green-500 ml-1.5'>
+                        {ele.desc.length != 0 ?
+                            <ol style={{ listStyleType: 'disc' }} className='flex w-full pl-2.5 flex-col items-start justify-start gap-y-1.5 text-left'>
+                                {
+                                    ele.desc.map((points, idx) => {
+                                        return (
+                                            <li key={idx}>{points}</li>
+                                        )
+                                    })
+                                }
+                            </ol>
+                            :
+                            'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur quisquam voluptate ex tempore soluta ipsam consequuntur doloribus sit illum. Ullam!'}
                     </span>
                 </span>
             </span>
         )
     })
+
     return (
         <div className='flex flex-col items-center justify-center w-full gap-y-16'>
             <span className='flex flex-col items-center justify-center w-full gap-y-2'>
                 <span className='flex font-sans text-black items-center justify-start gap-x-1.5 w-full'>
-                    <h1 className='text-lg text-green-700 font-semibold'>10 days Vacation in Florence Resort</h1>
+                    <h1 className='text-lg text-green-700 font-semibold'>{`${package_desc.total_days} days vacation in ${package_desc.nams}`}</h1>
                     <h3 className='text-xs text-green-700'>Paris, France</h3>
                 </span>
 
@@ -138,21 +159,21 @@ export default function Description() {
             <span className='text-left text-xs font-normal flex flex-col items-start justify-center w-full gap-y-5'>
                 <span className='text-sm font-semibold text-green-700'>Details about our tour details</span>
                 <span className='text-justify'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem animi, nemo quibusdam quod laudantium quas blanditiis ipsam non provident qui. Corporis officiis maiores soluta, harum excepturi vero atque, dolores pariatur nihil repellendus delectus voluptate nam optio possimus eum! Perspiciatis, itaque.
+                    {package_desc.description}
                 </span>
 
                 <span className='grid grid-cols-3 text-sm items-center justify-start gap-x-8 py-3.5 px-5 w-full bg-green-400 sm:text-base sm:grid-cols-4 sm:gap-x-16'>
                     <span className='flex items-center justify-start font-semibold'>
                         <BsFillCalendarCheckFill className='mr-1.5' />starts on
                     </span>
-                    <span className='col-span-2 sm:col-span-3'>12 sep 2013-22 sep 2023</span>
+                    <span className='col-span-2 sm:col-span-3'>{package_desc.start_date} - {package_desc.end_date}</span>
                 </span>
 
                 <span className='grid grid-cols-3 text-sm items-center justify-start gap-x-8 py-3.5 px-5 w-full bg-green-400 sm:text-base sm:grid-cols-4 sm:gap-x-16'>
                     <span className='flex items-center justify-start font-semibold'>
                         <BsClockFill className='mr-1.5' />starts on
                     </span>
-                    <span className='col-span-2 sm:col-span-3'>10 Days &nbsp; 9 Nights</span>
+                    <span className='col-span-2 sm:col-span-3'>{package_desc.total_days} Days &nbsp; {package_desc.total_nights} Nights</span>
                 </span>
 
                 <span className='grid grid-cols-1 gap-y-2.5 text-xs items-start justify-start gap-x-8 py-3.5 px-5 w-full sm:grid-cols-4 sm:gap-x-16'>
@@ -183,8 +204,8 @@ export default function Description() {
 
             {/* Tour Details */}
             <span className={`${choose.TourDetails ? 'max-h-max' : 'max-h-10'} duration-500 ease-linear overflow-y-clip text-left text-xs font-normal flex flex-col items-start justify-start w-full gap-y-5`}>
-                <span className='flex cursor-pointer items-center justify-center text-green-700 text-sm font-semibold' onClick={()=>handleClick(1)}>
-                    <BsFillCircleFill className={`text-md mt-0.5 mr-1 ${choose.TourDetails ? 'text-green-500' :  'text-green-300'}`} />
+                <span className='flex cursor-pointer items-center justify-center text-green-700 text-sm font-semibold' onClick={() => handleClick(1)}>
+                    <BsFillCircleFill className={`text-md mt-0.5 mr-1 ${choose.TourDetails ? 'text-green-500' : 'text-green-300'}`} />
                     Trip Details
                 </span>
                 <span className='text-justify'>
@@ -196,15 +217,44 @@ export default function Description() {
                         Tour itinerary :
                     </span>
                     <span className='grid gap-y-3 grid-cols-1 w-full'>
-                        {tourItinerary}
+                        {
+                            package_desc.tour_details.length != 0 ? package_desc.tour_details.map((ele, index) => {
+                                return (
+                                    <span key={index} className='flex flex-col items-start gap-y-1 gap-x-1.5 justify-start text-xs w-full sm:flex-row'>
+                                        <span className='bg-green-400 text-center w-full max-w-[4rem] font-semibold py-1.5 rounded-sm'>Day {index + 1}</span>
+                                        <span className='flex flex-col items-start justify-center text-left'>
+                                            <span className='flex items-center justify-center gap-x-2 text-green-700'>
+                                                <GiDiamonds className='text-xs' />
+                                                <span className='text-xs font-semibold'>{ele.title}</span>
+                                            </span>
+                                            <span className='flex items-center justify-center w-full text-left text-xs h-full pl-5 pr-3 py-3.5 my-2 border-l-2 border-green-500 ml-1.5'>
+                                                {ele.desc.length != 0 ?
+                                                    <ol style={{ listStyleType: 'disc' }} className='flex w-full pl-2.5 flex-col items-start justify-start gap-y-1.5 text-left'>
+                                                        {
+                                                            ele.desc.map((points, idx) => {
+                                                                return (
+                                                                    <li key={idx}>{points}</li>
+                                                                )
+                                                            })
+                                                        }
+                                                    </ol>
+                                                    :
+                                                    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur quisquam voluptate ex tempore soluta ipsam consequuntur doloribus sit illum. Ullam!'}
+                                            </span>
+                                        </span>
+                                    </span>
+                                )
+                            })
+                                : tourItinerary
+                        }
                     </span>
                 </span>
             </span>
 
             {/* Tour Activities */}
             <span className={`${choose.TourActivities ? 'max-h-max' : 'max-h-10'} duration-500 overflow-y-clip text-left text-xs font-normal flex flex-col items-start justify-start w-full gap-y-5`}>
-                <span className='flex cursor-pointer items-center justify-center text-sm font-semibold text-green-700' onClick={()=>handleClick(2)}>
-                    <BsFillCircleFill className={`text-md mt-0.5 mr-1 ${choose.TourActivities ? 'text-green-500' :  'text-green-300'}`} />
+                <span className='flex cursor-pointer items-center justify-center text-sm font-semibold text-green-700' onClick={() => handleClick(2)}>
+                    <BsFillCircleFill className={`text-md mt-0.5 mr-1 ${choose.TourActivities ? 'text-green-500' : 'text-green-300'}`} />
                     Tour Acitivites
                 </span>
                 <span className='text-justify'>
@@ -216,15 +266,33 @@ export default function Description() {
                         Activites :
                     </span>
                     <span className='grid gap-y-3 grid-cols-1 w-full'>
-                        {tourItinerary}
+                        {
+                            package_desc.tour_activities.length != 0 ? package_desc.tour_activities.map((ele, index) => {
+                                return (
+                                    <span key={index} className='flex flex-col items-start gap-y-1 gap-x-1.5 justify-start text-xs w-full sm:flex-row'>
+                                        <span className='bg-green-400 text-center w-full max-w-[4rem] font-semibold py-1.5 rounded-sm'>Task {index + 1}</span>
+                                        <span className='flex flex-col items-start justify-center text-left'>
+                                            <span className='flex items-center justify-center gap-x-2 text-green-700'>
+                                                <GiDiamonds className='text-xs' />
+                                                <span className='text-xs font-semibold'>{ele.title}</span>
+                                            </span>
+                                            <span className='flex items-center justify-center w-full text-left text-xs h-full pl-5 pr-3 py-3.5 my-2 border-l-2 border-green-500 ml-1.5'>
+                                                {ele.desc}
+                                            </span>
+                                        </span>
+                                    </span>
+                                )
+                            })
+                                : tourItinerary
+                        }
                     </span>
                 </span>
             </span>
 
             {/* Package Benefits */}
             <span className={`${choose.PackageBenefits ? 'max-h-max' : 'max-h-10'} duration-500 overflow-y-clip text-left text-xs font-normal flex flex-col items-start justify-start w-full gap-y-5`}>
-                <span className='flex cursor-pointer items-center justify-center text-sm font-semibold text-green-700' onClick={()=>handleClick(3)}>
-                    <BsFillCircleFill className={`text-md mt-0.5 mr-1  ${choose.PackageBenefits ? 'text-green-500' :  'text-green-300'}`} />
+                <span className='flex cursor-pointer items-center justify-center text-sm font-semibold text-green-700' onClick={() => handleClick(3)}>
+                    <BsFillCircleFill className={`text-md mt-0.5 mr-1  ${choose.PackageBenefits ? 'text-green-500' : 'text-green-300'}`} />
                     Package Benefits
                 </span>
 
@@ -240,8 +308,8 @@ export default function Description() {
 
             {/* Ending */}
             <span className={`${choose.Ending ? 'max-h-max' : 'max-h-10'} duration-500 overflow-y-clip text-left text-xs font-normal flex flex-col items-start justify-start w-full gap-y-5`}>
-                <span className='flex cursor-pointer items-center justify-center text-sm font-semibold text-green-700' onClick={()=>handleClick(4)}>
-                    <BsFillCircleFill className={`text-md mt-0.5 mr-1  ${choose.Ending ? 'text-green-500' :  'text-green-300'} `} />
+                <span className='flex cursor-pointer items-center justify-center text-sm font-semibold text-green-700' onClick={() => handleClick(4)}>
+                    <BsFillCircleFill className={`text-md mt-0.5 mr-1  ${choose.Ending ? 'text-green-500' : 'text-green-300'} `} />
                     Ending
                 </span>
                 <span className='text-justify'>

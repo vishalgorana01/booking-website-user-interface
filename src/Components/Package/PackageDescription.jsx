@@ -4,7 +4,8 @@ import ReactCarousel from '../Utilities/ReactCarousel'
 import Description from './Description'
 import ShowCase from '../Sidebar/ShowCase'
 
-export default function PackageDescription() {
+export default function PackageDescription(props) {
+    const {package_details} = props
     const packagesImage = [
         { src: 'https://img.freepik.com/free-photo/umbrella-chair_74190-3726.jpg?size=626&ext=jpg&uid=R73260634&ga=GA1.2.68261860.1688198679&semt=ais' },
         { src: 'https://img.freepik.com/free-photo/chair-nobody-summer-lifestyle-terrace_1203-4897.jpg?size=626&ext=jpg&uid=R73260634&ga=GA1.2.68261860.1688198679&semt=ais' },
@@ -28,7 +29,7 @@ export default function PackageDescription() {
 
                 <span className='flex flex-col-reverse items-start font-sans gap-x-3.5 gap-y-12 justify-between w-full lg:flex-row'>
                     <ShowCase />
-                    <Description />
+                    <Description package_desc = {package_details} />
                 </span>
 
             </div>
