@@ -25,7 +25,7 @@ function Footer() {
                         <h2 className='text-sm lg:text-base tracking-wide font-semibold -ml-6'>Vacation Packages</h2>
                         <ul className='flex list-disc text-xs gap-y-2.5 flex-col items-start justify-center'>
                             <li className='cursor-pointer hover:translate-x-2 duration-500'
-                            onClick={()=> document.location.href = (`/package?package='Las Vegas Vacations'&id=1`)} >Las Vegas Vacations
+                            onClick={()=> document.location.href = (`/package?package='Las Vegas Vacations'&id=1`)}>Las Vegas Vacations
                             </li>
                             <li className='cursor-pointer hover:translate-x-2 duration-500'
                             onClick={()=> document.location.href = (`/package?package='Orlando Vacations'&id=2`)}>Orlando Vacations</li>

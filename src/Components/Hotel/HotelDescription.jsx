@@ -4,7 +4,9 @@ import ReactCarousel from '../Utilities/ReactCarousel'
 import Description from './Description'
 import ShowCase from '../Sidebar/ShowCase'
 
-function HotelDescription() {
+function HotelDescription(props) {
+  const {hotel_details} = props;
+
     const hotelImages = [
         {src: 'https://img.freepik.com/free-photo/umbrella-chair_74190-3726.jpg?size=626&ext=jpg&uid=R73260634&ga=GA1.2.68261860.1688198679&semt=ais'},
         {src: 'https://img.freepik.com/free-photo/chair-nobody-summer-lifestyle-terrace_1203-4897.jpg?size=626&ext=jpg&uid=R73260634&ga=GA1.2.68261860.1688198679&semt=ais'},
@@ -16,6 +18,7 @@ function HotelDescription() {
         {src: 'https://img.freepik.com/free-photo/street-restaurant-old-town-regensburg-germany_1127-3371.jpg?size=626&ext=jpg&uid=R73260634&ga=GA1.2.68261860.1688198679&semt=ais'},
         {src: 'https://img.freepik.com/free-photo/terrace-restaurand-modern-style-summer_114579-2726.jpg?size=626&ext=jpg&uid=R73260634&ga=GA1.2.68261860.1688198679&semt=ais'},
     ]
+
   return (
     <>
     <section className='flex items-center justify-center w-screen px-3 lg:px-12 '>
@@ -28,7 +31,7 @@ function HotelDescription() {
 
           <span className='flex flex-col-reverse items-start font-sans gap-x-3.5 gap-y-12 justify-between w-full lg:flex-row'>
             <ShowCase />
-            <Description />
+            <Description hotel_details={hotel_details} />
           </span>
 
         </div>

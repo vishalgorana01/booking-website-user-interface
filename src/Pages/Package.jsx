@@ -12,9 +12,7 @@ import { vacations_Data } from '../Components/HardData/Vacations'
 export default function Package() {
     const [searchParams] = useSearchParams();
     const packageName = searchParams.get('package')
-    console.log(packageName)
     const packageId = searchParams.get('id')
-    console.log(packageId)
 
     const [vacation, setVacation] = useState(
         vacations_Data.filter((ele, idx) => {

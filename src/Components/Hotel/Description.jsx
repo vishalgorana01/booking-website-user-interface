@@ -10,7 +10,9 @@ import { BiSwim, BsJoystick } from 'react-icons/bi'
 import ShowCaseRating from '../Utilities/ShowCaseRating'
 import Reviews from '../Utilities/Reviews'
 
-function Description() {
+function Description(props) {
+    const {hotel_details} = props;
+
     const data = [
     {
         title: 'The best of all the Godness',
@@ -88,17 +90,17 @@ function Description() {
         <div className='flex flex-col items-center justify-center w-full gap-y-16'>
             <span className='flex flex-col items-center justify-center w-full gap-y-2'>
                 <span className='flex font-sans text-black items-center justify-start gap-x-1.5 w-full'>
-                    <h1 className='text-lg text-green-700 font-semibold'>Gale Hotels</h1>
-                    <h3 className='text-xs text-green-700'>Paris, France</h3>
+                    <h1 className='text-lg text-green-700 font-semibold'>{hotel_details.hotel_name}</h1>
+                    <h3 className='text-xs text-green-700'>{hotel_details.city}, {hotel_details.state}, {hotel_details.country}</h3>
                 </span>
 
                 <span className='flex font-sans text-xs text-green-700 items-center justify-start gap-x-1.5 w-full'>
-                    from 199/night &nbsp; <MdStars className='text-yellow-500 text-lg' /> 4.5/5
+                    from 199/night &nbsp; <MdStars className='text-yellow-500 text-lg' /> {hotel_details.star_rating}/5
                 </span>
 
                 <span className='flex font-sans text-xs text-green-700 items-center justify-between gap-x-1.5 w-full'>
                     <span className='flex items-center justify-center text-left'>
-                        <MdLocationOn className='text-xl cursor-pointer text-blue-400 mr-1' /> 8127 Myrtle Street, Muncie, IN 47302
+                        <MdLocationOn className='text-xl cursor-pointer text-blue-400 mr-1' /> {hotel_details.addressline1}
                     </span>
                     <span className='flex items-center text-md justify-center'>
                         <BsHeart className='text-lg mr-1.5 cursor-pointer' /> 16 &nbsp; <BsShare className='text-lg ml-2.5 cursor-pointer' />
@@ -108,11 +110,11 @@ function Description() {
 
             <span className='text-left text-xs font-normal flex flex-col items-start justify-center w-full gap-y-5'>
                 <span className=' text-justify'>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem animi, nemo quibusdam quod laudantium quas blanditiis ipsam non provident qui. Corporis officiis maiores soluta, harum excepturi vero atque, dolores pariatur nihil repellendus delectus voluptate nam optio possimus eum! Perspiciatis, itaque.
+                    {hotel_details.overview}
                 </span>
-                <span className='text-justify'>
+                {/* <span className='text-justify'>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem animi, nemo quibusdam quod laudantium quas blanditiis ipsam non provident qui. Corporis officiis maiores soluta, harum excepturi vero atque, dolores pariatur nihil repellendus delectus voluptate nam optio possimus eum! Perspiciatis, itaque.
-                </span>
+                </span> */}
             </span>
 
             <span className='flex flex-col items-start justify-center w-full gap-y-5'>
