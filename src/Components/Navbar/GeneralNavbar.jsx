@@ -25,7 +25,7 @@ function GeneralNavbar(props) {
         if (val != '') {
             set_search_options(
                 searchData.map((ele, index) => {
-                    if (ele.hotel_name.toLowerCase().includes(search) || ele.city.toLowerCase().includes(search) || ele.state.toLowerCase().includes(search) || ele.country.toLowerCase().includes(search)) {
+                    if (ele.hotel_name.toLowerCase().includes(search.toLowerCase()) || ele.city.toLowerCase().includes(search.toLowerCase()) || ele.state.toLowerCase().includes(search.toLowerCase()) || ele.country.toLowerCase().includes(search.toLowerCase())) {
                         return (
                             <span key={index} className='text-sm font-semibold w-full py-2 px-3 rounded-md cursor-pointer hover:bg-[#00000038]'
                                 style={{ borderBottom: '1px solid black' }}
