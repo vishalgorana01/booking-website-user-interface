@@ -8,7 +8,7 @@ import Button from '../Utilities/Button'
 import { Rating } from '@mui/material'
 import ReadOnlyRating from '../Utilities/ReadOnlyRating'
 
-function PropertiesCard({ img, name, category, address, city, state, rating }) {
+function PropertiesCard({ img, name, category, address, city, state, rating, id }) {
     return (
         <div className='flex text-left cursor-pointer relative flex-col items-center justify-center rounded-sm overflow-hidden shadow-lg bg-white w-full duration-500 hover:-translate-y-1.5 hover:shadow-2xl' style={{ border: '1px solid #00000045' }}>
             <AiOutlineHeart className='absolute cursor-pointer top-5 right-6 text-xl text-white' />
@@ -29,8 +29,11 @@ function PropertiesCard({ img, name, category, address, city, state, rating }) {
                     </span>
                 </span>
                 <span className='flex items-center justify-between w-full mt-0.5'>
-                    <span className='flex w-full items-center justify-start'>
-                        <Button labelName="view details" />
+                    <span className='flex w-full items-center justify-start'
+                    onClick={() => {
+                        document.location.href = (`/hotel?hotel='${name}'&id=${id}`)
+                    }}>
+                        <Button labelName="view details"  />
                     </span>
                     <span className='flex items-center font-semibold text-[#000000d4] justify-center gap-x-0.5'>
                         <MdOutlineCurrencyPound className='text-3xl' />

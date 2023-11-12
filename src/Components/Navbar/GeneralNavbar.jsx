@@ -30,7 +30,7 @@ function GeneralNavbar(props) {
                             <span key={index} className='text-sm font-semibold w-full py-2 px-3 rounded-md cursor-pointer hover:bg-[#00000038]'
                                 style={{ borderBottom: '1px solid black' }}
                                 onClick={() => {
-                                    document.location.href = document.location.href = (`/hotel?hotel='${ele.hotel_name}'&id=${ele.hotel_id}`)
+                                    document.location.href = (`/hotel?hotel='${ele.hotel_name}'&id=${ele.hotel_id}`)
                                 }}
                             >{ele.hotel_name}, {ele.city}, {ele.state}, {ele.country}</span>
                         )

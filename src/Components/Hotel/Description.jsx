@@ -88,8 +88,8 @@ function Description(props) {
     })
     return (
         <div className='flex flex-col items-center justify-center w-full gap-y-16'>
-            <span className='flex flex-col items-center justify-center w-full gap-y-2'>
-                <span className='flex font-sans text-black items-center justify-start gap-x-1.5 w-full'>
+            <span className='flex flex-col items-center justify-center w-full gap-y-2.5 text-left sm:gap-y-2'>
+                <span className='flex flex-col font-sans text-black items-start justify-start gap-x-1.5 w-full sm:flex-row sm:items-center'>
                     <h1 className='text-lg text-green-700 font-semibold'>{hotel_details.hotel_name}</h1>
                     <h3 className='text-xs text-green-700'>{hotel_details.city}, {hotel_details.state}, {hotel_details.country}</h3>
                 </span>

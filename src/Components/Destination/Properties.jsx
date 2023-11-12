@@ -88,7 +88,7 @@ function Properties(props) {
                 properties_data.length !== 0 ? 
                 properties_data.map((ele, index) => {
                   return (
-                    <PropertiesCard key={index} name={ele.hotel_name} category={ele.hotel_translated_name} address={ele.addressline1} city={ele.city} state={ele.state} img={ele.photo1} rating={ele.star_rating} />
+                    <PropertiesCard key={index} name={ele.hotel_name} category={ele.hotel_translated_name} address={ele.addressline1} city={ele.city} state={ele.state} img={ele.photo1} rating={ele.star_rating} id={ele.hotel_id} />
                   )
                 })
                 :
